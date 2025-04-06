@@ -58,8 +58,7 @@ namespace sistemaAlquilerDonChusSA
         }
 
 
-        //metodos
-
+        //metodos   
         private void CargarAutos()
         {
             if (!File.Exists(ArchivoAutos))
@@ -71,9 +70,11 @@ namespace sistemaAlquilerDonChusSA
                 listaAutos = JsonConvert.DeserializeObject<List<Auto>>(json) ?? new List<Auto>();
             }
 
+            dataGridView1.AutoGenerateColumns = true;
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = listaAutos;
         }
+
 
 
         private void GuardarAutos()
